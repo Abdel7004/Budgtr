@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
-    <title>Document</title>
-</head>
+
+    <%- include(`./partials/head.ejs`);%>
+
+    <title>Budget Index Page</title>
+
+
 <body>
-    
+
+    <div class="container">
+        <h1>Budgtr ALL</h1>
+
+        <table>
+            <% for (var i = 0; i < allBudgets.length; i++) { %>
+             <tr>
+               <td><%= allBudgets[i].date %></td>
+               
+               <td><a href="/budgets<%=i%>"><%=allBudgets[i].name %></a></td>
+               <td><%= allBudgets[i].amount %></td>
+             </tr>    
+            <% } %> 
+         </table> 
+    </div>
+    <form action="/budgets/new">
+        <input type="submit" value="Create New Budget" />
+    </form>
+
 </body>
 </html>
