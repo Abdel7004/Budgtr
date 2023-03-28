@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/skeleton.css">
-    <title>Document</title>
-</head>
+
+    <%- include(`./partials/head.ejs`);%>
+
+    <title>New Budget</title>
+
+    <form action="/budgets">
+      <input type="submit" value="Back to Index" />
+  </form>
+
 <body>
-    
+
+  <h1>New Budget</h1>
+  
+  <form action="/budgets/" method="POST">
+
+    Date: <input type="text" name="date" placeholder="Date" /><br />
+    Name: <input type="text" name="name" placeholder="Name"/><br />
+    From: <input type="text" name="name" placeholder="From"/><br />
+    Amount: <input type="text" name="amount" placeholder="Amount"/><br />
+  
+  <input type="submit" value="Create Budget">
+</form>
+
 </body>
 </html>
+
